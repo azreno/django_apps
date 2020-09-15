@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% block title %}Поделиться постом{% endblock %}
+{% block content %}
+    {% if sent %}
+        <h1>Email успешно отправлен</h1>
+        <p>"{{ post.title }}" успешно отправлен {{ form.cleaned_data.to }}.</p>
+    {% else %}
+        <h1>Поделиться {{ post.title }} по email</h1>
+        <form action="." method="post">
+            {% for field in form %}
+                <div>
+                    {{ field.errors }}
+                    {{ field.label_tag }} {{ field }}
+                </div>
+            {% endfor %}
+            <!-- или по желанию всё сразу:
+            {{ form.as_p }} - означает "как <p>", т.е. сгенерирует поля как элементы параграфа
+            -->
+            {% csrf_token %}
+            <input type="submit" value="Send email">
+        </form>
+    {% endif %}
+{% endblock %}
