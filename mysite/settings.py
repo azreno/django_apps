@@ -123,8 +123,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #  Для использования SMTP-сервера gmail
+#  Также необходимо включить в настройках аккаунта https://myaccount.google.com/lesssecureapps
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'ergo.cassum@gmail.com'
-EMAIL_HOST_PASSWORD = 'long password'
+EMAIL_HOST_USER = 'nickname@gmail.com'
+EMAIL_HOST_PASSWORD = 'password'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
