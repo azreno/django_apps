@@ -121,8 +121,8 @@ STATIC_URL = '/static/'
 
 # Для использования SMTP-сервера gmail
 # Также необходимо включить в настройках аккаунта, для google https://myaccount.google.com/lesssecureapps
-EMAIL_HOST = 'smtp.yourserver.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'nickname@server.com'
-EMAIL_HOST_PASSWORD = '...'
+EMAIL_HOST_PASSWORD = 'your safe password'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
