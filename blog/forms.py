@@ -10,6 +10,7 @@ class EmailPostForm(forms.Form):
 
 
 class CommentForm(forms.ModelForm):
+    #  Создание формы из модели.
     class Meta:
         model = Comment
         fields = ('name', 'email', 'body')
