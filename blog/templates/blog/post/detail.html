@@ -18,4 +18,13 @@
         {% empty %}
             <p>Нет комментариев.</p>
     {% endfor %}
+    {% if new_comment %}
+        <h2>Комментарий добавлен.</h2>
+    {% endif %}
+    <h2>Добавить комментарий</h2>
+    <form action="." method="post">
+        {{ comment_form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Добавить комментарий"></p>
+    </form>
 {% endblock %}
