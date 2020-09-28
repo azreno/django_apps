@@ -7,7 +7,9 @@
     {% if similar_posts %}
         <h2>Похожие посты</h2>
         {% for similar in similar_posts %}
-            {{ similar }}
+            <p><a href="{{ similar.get_absolute_url }}">{{ similar.title }}</a></p>
+            {% empty %}
+            <p>Похожих статей нет.</p>
         {% endfor %}
     {% endif %}
     {% with comments.count as total_comments %}
