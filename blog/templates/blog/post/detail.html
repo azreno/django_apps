@@ -1,9 +1,10 @@
 {% extends "blog/base.html" %}
+{% load blog_tags %}
 {% block title %}{{ post.title }}{% endblock %}
 {% block content %}
     <h1>{{ post.title }}</h1>
     <p class="date">Опубликовано {{ post.publish }} автором {{ post.author }}</p>
-    {{ post.body|linebreaks }}
+    {{ post.body|markdown }}
     {% if similar_posts %}
         <h2>Похожие посты</h2>
         {% for similar in similar_posts %}
